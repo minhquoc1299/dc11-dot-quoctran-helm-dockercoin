@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels: {{ include "common.labels.webui" . | indent 4 }}
+  name: webui
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels: {{ include "common.labels.webui" . | indent 6 }}
+  template:
+    metadata:
+      labels: {{ include "common.labels.webui" . | indent 8 }}
+    spec:
+      containers:
+      - image: {{ .Values.images.webui }} 
+        name: webui
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels: {{ include "common.labels.webui" . | indent 4 }}
+  name: webui
+spec:
+  ports:
+  - port: {{ .Values.ports.webui }}
+    protocol: TCP
+    targetPort: {{ .Values.ports.webui }}
+  selector: {{ include "common.labels.webui" . | indent 4 }}
+  type: NodePort

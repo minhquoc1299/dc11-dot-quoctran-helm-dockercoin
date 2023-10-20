@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  helm-dockercoin:
+  - apiVersion: v2
+    appVersion: v0.1
+    created: "2023-10-20T11:31:42.544192684+07:00"
+    description: A Helm chart for Kubernetes deploy Dockercoin
+    digest: ed3edd851d673a60a5c82b6270a357b0aa42909167104bdb3f6b7b34c9f1fc43
+    name: helm-dockercoin
+    type: application
+    urls:
+    - releases/helm-dockercoin-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-10-20T11:31:42.542416739+07:00"

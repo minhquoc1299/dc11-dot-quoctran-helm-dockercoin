@@ -1,0 +1,18 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels: {{ include "common.labels.worker" . | indent 4 }}
+  name: worker
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels: {{ include "common.labels.worker" . | indent 6 }}
+  template:
+    metadata:
+      labels: {{ include "common.labels.worker" . | indent 8 }}
+    spec:
+      containers:
+      - image: {{ .Values.images.worker }} 
+        name: worker
