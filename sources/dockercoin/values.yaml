@@ -1,5 +1,5 @@
 namespace: ns-dockercoin
-replicaCount: 1
+replicaCount: 2
 ports:
   hasher: 80
   redis: 6379

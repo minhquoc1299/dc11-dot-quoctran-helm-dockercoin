@@ -22,6 +22,7 @@ kind: Service
 metadata:
   labels: {{ include "common.labels.hasher" . | indent 4 }}
   name: hasher
+  namespace: {{ .Values.namespace }}
 spec:
   ports:
   - port: {{ .Values.ports.hasher }}

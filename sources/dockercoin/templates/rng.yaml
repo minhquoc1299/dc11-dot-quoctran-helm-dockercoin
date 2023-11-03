@@ -22,6 +22,7 @@ kind: Service
 metadata:
   labels: {{ include "common.labels.rng" . | indent 6 }}
   name: rng
+  namespace: {{ .Values.namespace }}
 spec:
   ports:
   - port: {{ .Values.ports.rng }}

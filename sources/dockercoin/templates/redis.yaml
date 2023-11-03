@@ -22,6 +22,7 @@ kind: Service
 metadata:
   labels: {{ include "common.labels.redis" . | indent 4 }}
   name: redis
+  namespace: {{ .Values.namespace }}
 spec:
   ports:
   - port: {{ .Values.ports.redis }}
