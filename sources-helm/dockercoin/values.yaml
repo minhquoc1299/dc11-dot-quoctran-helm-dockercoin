@@ -1,0 +1,14 @@
+namespace: ns-dockercoin
+replicaCount: 2
+ports:
+  hasher: 80
+  redis: 6379
+  rng: 80
+  webui: 80
+
+images:
+  hasher: dockercoins/hasher:v0.1
+  redis: redis
+  rng: dockercoins/rng:v0.1
+  webui: dockercoins/webui:v0.1
+  worker: dockercoins/worker:v0.1
